@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7411169376d21204714ed7b019e2c528",
+    "revision": "432bb5cf7f6511fd68fdec463831e1ca",
     "url": "/NYC-CovAid/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/NYC-CovAid/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "a5736ad0d96c1a5b3b74",
+    "revision": "1580f2862854c8ae3dbb",
     "url": "/NYC-CovAid/static/css/main.119699df.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/NYC-CovAid/static/js/2.f05917e1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a5736ad0d96c1a5b3b74",
-    "url": "/NYC-CovAid/static/js/main.77947851.chunk.js"
+    "revision": "1580f2862854c8ae3dbb",
+    "url": "/NYC-CovAid/static/js/main.e1ea8187.chunk.js"
   },
   {
     "revision": "39f39b4d085a013852e4",
