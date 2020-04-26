@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { isEqual } from 'lodash';
 import { Container, ListGroup } from 'react-bootstrap';
 import sources from '../data.json';
 
@@ -13,11 +14,11 @@ export default class ListView extends Component {
     this.state = { sources: this.getSources(props) }
   }
 
-  componentDidUpdate(props) {
-    if (props.offset !== this.props.offset ||
-        props.limit !== this.props.limit ||
-        props.filters !== this.props.filters) {
-      this.setState({ sources: this.getSources(props) });
+  componentDidUpdate(prevProps) {
+    if (prevProps.offset !== this.props.offset ||
+      prevProps.limit !== this.props.limit ||
+        !isEqual(prevProps.filters, this.props.filters)) {
+      this.setState({ sources: this.getSources() });
     }
   }
 

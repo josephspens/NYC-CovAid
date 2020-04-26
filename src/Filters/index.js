@@ -6,7 +6,7 @@ export default function (props) {
     <Container style={{ paddingTop: 20 }}>
         <Navbar bg="light">
         <Dropdown>
-          <Dropdown.Toggle>Dropdown Button</Dropdown.Toggle>
+          <Dropdown.Toggle>Category Filter</Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item onClick={() => props.filterCategory('Grocery Stores')}>Grocery Stores</Dropdown.Item>
             <Dropdown.Item onClick={() => props.filterCategory('Prepared Meals')}>Prepared Meals</Dropdown.Item>

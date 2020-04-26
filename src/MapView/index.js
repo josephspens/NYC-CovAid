@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, InfoWindow, Marker, Circle, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Circle, GoogleApiWrapper } from 'google-maps-react';
 import sources from '../data.json';
 
 const positions = {
@@ -37,7 +37,7 @@ export class MapContainer extends Component {
 
     filterSourcesByZip(zip) {
         this.setState({
-            sources: this.getSources().filter(source => source['Zip Code'] == zip)
+            sources: this.getSources().filter(source => source['Zip Code'] === zip)
         })
     }
 
