@@ -11,7 +11,7 @@ const positions = {
 export class MapContainer extends Component {
     static defaultProps = {
         offset: 0,
-        limit: 20
+        limit: 50
     };
 
     constructor(props) {

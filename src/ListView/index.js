@@ -5,7 +5,7 @@ import sources from '../data.json';
 export default class ListView extends Component {
   static defaultProps = {
     offset: 0,
-    limit: 20
+    limit: 50
   };
 
   constructor(props) {
@@ -32,7 +32,12 @@ export default class ListView extends Component {
       <Container style={{ paddingTop: 20 }}>
         <ListGroup bg="light">
           {this.state.sources.map(source => (
-            <ListGroup.Item key={source.name}>{source.Name}</ListGroup.Item>
+            <ListGroup.Item key={source.name}>
+              <div><a href={source.Website}>{source.Name}</a></div>
+              <div>{source.Service}</div>
+              <div>{source['Phone Number']}</div>
+              <div>{source.Notes}</div>
+            </ListGroup.Item>
           ))}
         </ListGroup>
       </Container>
