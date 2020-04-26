@@ -4,7 +4,8 @@
 - Katelyn Hertel
 - Joseph Spens
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zl4SP3eIbBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Demo
+[![Project Demo](https://img.youtube.com/vi/Zl4SP3eIbBE/0.jpg)](https://www.youtube.com/watch?v=Zl4SP3eIbBE)
 
 ## Inspiration
 Katelyn has always been used to volunteering in her community and outside in other parts of the world. However she is immuno-suppressed and cannot leave her apartment in NYC, right now the center of the COVID-19 pandemic in the USA. She was looking for ways to volunteer from home and found a group called Sunnyside Woodside Mutual Aid, a group set up in her local Queens neighborhood. She quickly signed up to become a dispatcher connecting in need community members with able bodied volunteers. Every shift she had she was continuously asked the same question, "Is there a map somewhere of what's open in NYC still?" The short answer is yes, but its neighborhood oriented which means each has smaller audiences. There's nothing out there right now that covers the entire city, catering to that larger audience.  
