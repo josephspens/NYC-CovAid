@@ -1,5 +1,9 @@
 import React from 'react';
 import { Container, Navbar, Dropdown } from 'react-bootstrap';
+import sources from '../data.json';
+
+const services = new Set();
+sources.forEach(source => source.Service.split(', ').forEach(service => services.add(service)));
 
 export default function (props) {
   return (
@@ -8,9 +12,9 @@ export default function (props) {
         <Dropdown>
           <Dropdown.Toggle>Category Filter</Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => props.filterCategory('Grocery Stores')}>Grocery Stores</Dropdown.Item>
-            <Dropdown.Item onClick={() => props.filterCategory('Prepared Meals')}>Prepared Meals</Dropdown.Item>
-            <Dropdown.Item onClick={() => props.filterCategory('Pharmacy')}>Pharmacy</Dropdown.Item>
+            {Array.from(services).sort().map(service => (
+              <Dropdown.Item key={service} onClick={() => props.filterCategory(service)}>{service}</Dropdown.Item>
+            ))}
           </Dropdown.Menu>
         </Dropdown>
         </Navbar>

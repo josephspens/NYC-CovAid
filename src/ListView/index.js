@@ -16,7 +16,7 @@ export default class ListView extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.offset !== this.props.offset ||
-      prevProps.limit !== this.props.limit ||
+        prevProps.limit !== this.props.limit ||
         !isEqual(prevProps.filters, this.props.filters)) {
       this.setState({ sources: this.getSources() });
     }
@@ -33,7 +33,7 @@ export default class ListView extends Component {
       <Container style={{ paddingTop: 20 }}>
         <ListGroup bg="light">
           {this.state.sources.map(source => (
-            <ListGroup.Item key={source.name}>
+            <ListGroup.Item key={source.Name}>
               <div><a href={source.Website}>{source.Name}</a></div>
               <div>{source.Service}</div>
               <div>{source['Phone Number']}</div>
