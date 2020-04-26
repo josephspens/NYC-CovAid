@@ -33,7 +33,7 @@ export default class ListView extends Component {
       <Container style={{ paddingTop: 20 }}>
         <ListGroup bg="light">
           {this.state.sources.map(source => (
-            <ListGroup.Item key={source.Name}>
+            <ListGroup.Item key={source.id}>
               <div><a href={source.Website}>{source.Name}</a></div>
               <div>{source.Service}</div>
               <div>{source['Phone Number']}</div>
