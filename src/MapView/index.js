@@ -1,48 +1,19 @@
 import React, { Component } from 'react';
-import { isEqual } from 'lodash';
-import { Map, Circle, GoogleApiWrapper } from 'google-maps-react';
-import sources from '../data.json';
-
-const positions = {
-  '11377': { lat: 40.743, lng: -73.904 },
-  '11209': { lat: 40.623, lng: -74.030 },
-  '10016': { lat: 40.746, lng: -73.978 }
-}
+import { Map, Marker, Circle, GoogleApiWrapper } from 'google-maps-react';
+import zips from '../zips.json';
  
 export class MapContainer extends Component {
   static defaultProps = {
-    offset: 0,
-    limit: 50
+    zips: []
   };
 
   constructor(props) {
     super(props);
     this.geocoder = new props.google.maps.Geocoder();
-    this.state = { sources: this.getSources(props) }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.offset !== this.props.offset ||
-      prevProps.limit !== this.props.limit ||
-      !isEqual(prevProps.filters, this.props.filters)) {
-      this.setState({ sources: this.getSources() });
-    }
-  }
-
-  getSources(props = this.props) {
-    return sources
-      .filter(source => !!props.filters.category ? source.Service === props.filters.category : true)
-      .slice(props.offset, props.offset + props.limit)
-      .map(source => ({ ...source, position: positions[source['Zip Code']] }));
-  }
-
-  filterSourcesByZip(zip) {
-    this.setState({
-      sources: this.getSources().filter(source => source['Zip Code'] === zip)
-    })
   }
 
   render() {
+    this.props.zips.forEach(zip => console.log(zips[zip]));
     return (
       <Map
         google={this.props.google}
@@ -50,12 +21,12 @@ export class MapContainer extends Component {
         initialCenter={{ lat: 40.7128, lng: -74.0060 }}
         style={{ height: 1000 }}
       >
-        {Object.keys(positions).map(zip => {
-          const numSources = this.state.sources.filter(source => source['Zip Code'] === zip).length
+        {/* {Object.keys(positions).map(zip => {
+          const numSources = this.props.sources.filter(source => source['Zip Code'] === zip).length
           return (
             <Circle
               key={zip}
-              radius={(numSources / this.state.sources.length) * 2000}
+              radius={(numSources / this.props.sources.length) * 2000}
               center={positions[zip]}
               // onMouseover={() => console.log('mouseover')}
               // onClick={() => this.filterSourcesByZip(zip)}
@@ -67,10 +38,10 @@ export class MapContainer extends Component {
               fillOpacity={0.4}
             />
           );
-        })}
-        {/* {this.state.sources.map(source => (
-          <Marker key={source.Name} name={source.Name} position={source.position} /> 
-        ))} */}
+        })} */}
+        {this.props.zips.map(zip => (
+          <Marker key={zip} name={zip} position={zips[zip]} /> 
+        ))}
         {/* <InfoWindow onClose={this.onInfoWindowClose}>
           <h1>{this.state.selectedPlace.name}</h1>
         </InfoWindow> */}

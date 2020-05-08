@@ -1,5 +1,5 @@
 {
-  "name": "NYC-CovAid",
+  "name": "nyc-covaid",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://josephspens.nyc/NYC-CovAid",
@@ -23,6 +23,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "prebuild": "npm run generate",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
